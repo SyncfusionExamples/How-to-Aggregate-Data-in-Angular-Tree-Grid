@@ -1,0 +1,68 @@
+<ejs-treegrid [dataSource]="data" [treeColumnIndex]="1" childMapping="subtasks">
+  <e-columns>
+    <e-column
+      field="taskID"
+      headerText="Task ID"
+      textAlign="Right"
+      width="90"
+    ></e-column>
+    <e-column
+      field="taskName"
+      headerText="Task Name"
+      textAlign="Left"
+      width="180"
+    ></e-column>
+    <e-column
+      field="startDate"
+      headerText="Start Date"
+      textAlign="Right"
+      format="yMd"
+      width="90"
+    ></e-column>
+    <e-column
+      field="duration"
+      headerText="Duration"
+      textAlign="Right"
+      type="number"
+      width="80"
+    ></e-column>
+  </e-columns>
+  <e-aggregates>
+    <e-aggregate [showChildSummary]="false">
+      <e-columns>
+        <e-column field="duration" type="Sum" format="N2">
+          <ng-template #footerTemplate let-data
+            >Sum: {{ data.Sum }}</ng-template
+          ></e-column
+        >
+        <e-column field="taskName" type="Count">
+          <ng-template #footerTemplate let-data
+            >Count: {{ data.Count }}</ng-template
+          >
+        </e-column>
+      </e-columns>
+    </e-aggregate>
+    <e-aggregate [showChildSummary]="false">
+      <e-columns>
+        <e-column field="duration" type="Max">
+          <ng-template #footerTemplate let-data
+            >Max: {{ data.Max }}</ng-template
+          >
+        </e-column>
+      </e-columns>
+    </e-aggregate>
+    <e-aggregate [showChildSummary]="false">
+      <e-columns>
+        <e-column
+          field="taskName"
+          type="Custom"
+          [customAggregate]="customAggregateFn"
+        >
+          <ng-template #footerTemplate let-data
+            >Total Testing Tasks: {{ data.Custom }}</ng-template
+          >
+        </e-column>
+      </e-columns>
+    </e-aggregate>
+  </e-aggregates>
+</ejs-treegrid>
