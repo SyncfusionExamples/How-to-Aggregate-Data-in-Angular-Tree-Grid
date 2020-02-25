@@ -2,6 +2,8 @@
 Learn how you can show aggregates in the Syncfusion Angular Tree Grid control.
 In this example, you can learn how to show aggregated values using the built-in aggregate types in the Tree Grid footer and how to hide them in child rows. Also, you can learn how to format the aggregate value, add more columns in the aggregation row, add more aggregations for same column, and calculate the aggregate value with your own aggregate function.
 
+Watch the video now:https://www.syncfusion.com/tutorial-videos/angular/treegrid?title=how-to-work-with-aggregates-of-angular-tree-grid
+
 Documentation: https://ej2.syncfusion.com/angular/documentation/treegrid/aggregates 
 
 ## Project prerequisites
